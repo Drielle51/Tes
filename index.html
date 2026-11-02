@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+
+<style>
+body {
+  background: #090b12;
+  color: #f5dce5;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #171a23;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #ff477733;
+}
+
+h2 {
+  color: #ff789d;
+  text-align: center;
+}
+
+#text {
+  font-size: 15px;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+.cursor {
+  display: inline-block;
+  color: #ff789d;
+  animation: blink .7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.heart {
+  text-align: center;
+  font-size: 25px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>♡ For You, Dear ♡</h2>
+
+  <div id="text"></div><span class="cursor">|</span>
+
+  <div class="heart">❤️</div>
+</div>
+
+<script>
+const message = `Dear, I love you so much.
+
+Terima kasih sudah hadir
+dan menjadi bagian dari hidupku.
+
+Aku harap kita bisa terus bersama,
+melewati banyak cerita,
+dan menciptakan kenangan baru.
+
+I love you, always. ❤️`;
+
+let index = 0;
+
+function typing() {
+  if (index < message.length) {
+    document.getElementById("text").textContent +=
+      message.charAt(index);
+
+    index++;
+    setTimeout(typing, 65);
+  }
+}
+
+typing();
+</script>
+
+</body>
+</html>
